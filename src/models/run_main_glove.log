@@ -1,0 +1,50 @@
+/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=52279:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Users/test/Desktop/Research/TrjPrivacy/out/production/TrjPrivacy:/Users/test/Desktop/Research/TrjPrivacy/libs/commons-math3-3.6.1.jar models.Main
+------------------------------------------------------------------------------------------------------
+|		 Trajectory Privacy Survey Project                                                           |
+|		 Title:   A Survey and Experimental Study on Privacy-Preserving Trajectory Data Publishing   |
+|		 Authors: Fengmei Jin, Wen Hua, Matteo Francia, Pingfu Chao, Maria E Orlowska, Xiaofang Zhou |
+------------------------------------------------------------------------------------------------------
+[PROGRESS] reading parameters from /Users/test/Desktop/Research/TrjPrivacy/src/resources/config.properties
+
+[Parameters]
+dataInput: ./Testing/formal_inputs/
+dataOutput: ./Testing/outputs/
+dataset: T-Drive
+exposure_ratio: 0.2
+homePath: /put/your/path/here/
+k-anonymity: 5
+l-diversity: 3
+min_length: 10
+num_mixzones: 10000
+outputResults: false
+poiFile: ./Testing/BeijingRoadNetworkInfo/AllPOI.csv
+privacyModel: glove
+radius: 0.2
+roadNetworkFile: ./Testing/BeijingRoadNetworkInfo/vertices.txt
+t-closeness: 0.1
+variant: T-Drive_object/100
+------------------------------------------------------
+
+[PROGRESS] Reading trajectory data from ./Testing/formal_inputs/T-Drive_object/100.csv
+[INFO] average length of 100 trajectories = 1227.050
+
+
+------------------------------------------------------------------------------------------------------
+		 Selected Model: GLOVE
+		 Title:          Hiding mobile traffic fingerprints with GLOVE (2015)
+		 Parameters:     k-anonymity = 5
+------------------------------------------------------------------------------------------------------
+
+[PROGRESS] Computing Trajectory-wise merge cost matrix: 5%..10%..15%..20%..25%..30%..35%..40%..45%..50%..55%..60%..65%..70%..75%..80%..85%..90%..95%..100%
+[TIME-COST] for computing stretch matrix: 42.397 s, 0.707 min
+
+[PROGRESS] Merging trajectories based on pre-computed costs: 5%..10%..15%..20%..25%..30%..35%..40%..45%..50%..60%..65%..70%..85%..90%..95%..100%
+[TIME-COST] for merging trajectories: 12.819 s, 0.214 min
+
+[ALERT] 3 trajectories may not satisfy the 5-anonymity.
+
+------------------------------------------------------------------------------------------------------
+
+The program is done!
+
+Process finished with exit code 0

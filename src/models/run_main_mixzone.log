@@ -1,0 +1,61 @@
+/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=52201:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Users/test/Desktop/Research/TrjPrivacy/out/production/TrjPrivacy:/Users/test/Desktop/Research/TrjPrivacy/libs/commons-math3-3.6.1.jar models.Main
+------------------------------------------------------------------------------------------------------
+|		 Trajectory Privacy Survey Project                                                           |
+|		 Title:   A Survey and Experimental Study on Privacy-Preserving Trajectory Data Publishing   |
+|		 Authors: Fengmei Jin, Wen Hua, Matteo Francia, Pingfu Chao, Maria E Orlowska, Xiaofang Zhou |
+------------------------------------------------------------------------------------------------------
+[PROGRESS] reading parameters from /Users/test/Desktop/Research/TrjPrivacy/src/resources/config.properties
+
+[Parameters]
+dataInput: ./Testing/formal_inputs/
+dataOutput: ./Testing/outputs/
+dataset: T-Drive
+exposure_ratio: 0.2
+homePath: /put/your/path/here/
+k-anonymity: 5
+l-diversity: 3
+min_length: 10
+num_mixzones: 10000
+outputResults: false
+poiFile: ./Testing/BeijingRoadNetworkInfo/AllPOI.csv
+privacyModel: mixzone
+radius: 0.2
+roadNetworkFile: ./Testing/BeijingRoadNetworkInfo/vertices.txt
+t-closeness: 0.1
+variant: T-Drive_object/100
+------------------------------------------------------
+
+[PROGRESS] Reading trajectory data from ./Testing/formal_inputs/T-Drive_object/100.csv
+[INFO] average length of 100 trajectories = 1227.050
+
+
+----------------------------------------------------------------------------------------------------------
+		 Selected Model: Mix-Zone (Uniform traffic mix zone placement)
+		 Title:          Traffic-aware multiple mix zone placement for protecting location privacy (2012)
+		 Parameters:     1) # of max mix-zones = 10000; 2) distance threshold = 0.200
+----------------------------------------------------------------------------------------------------------
+
+[REPORT] # of vertices = 171504
+[PROGRESS] Construct a grid for the vertices in the graph ...
+[REPORT] # of edges = 231440
+[TIME-COST] for graph construction based on road network: 0.406 s, 0.007 min
+
+[REPORT] # of all articulation points: 29194
+[REPORT] # of bridge edges = 14354
+[TIME-COST] for articulation points: 0.034 s, 0.001 min
+
+[REPORT] The size of Maximal Independent Set = 74801
+[TIME-COST] for maximal independent set: 0.100 s, 0.002 min
+
+[PROGRESS] Setting 10000 mix zones ...
+[REPORT] # of valid grids that contain mix-zones = 9482
+[TIME-COST] for 10000 mix-zone placement: 81.366 s, 1.356 min
+
+[PROGRESS] Start trajectory anonymization ...
+[TIME-COST] for anonymization: 0.068 s, 0.001 min
+
+------------------------------------------------------------------------------------------------------
+
+The program is done!
+
+Process finished with exit code 0
